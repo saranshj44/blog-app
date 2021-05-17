@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../stylesheets//register.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="center">
+        <!-- <a href="/login"><i class="ri-arrow-left-line"></i>Already Have an account ?</a> -->
+        <form action="/update" method="post">
+            <div class="formelem">
+                <label for="name">Full Name</label>
+                <input type="text" name="name" placeholder="Fullname" id="" value=<%= loggedinuser.name %>>
+            </div>
+            <div class="formelem">
+                <label for="username">UserName</label>
+                <input type="text" name="username" placeholder="User Name" id="" value=<%= loggedinuser.username %>>
+            </div>
+            <div class="formelem">
+                <label for="name">Email</label>
+                <input type="email" name="email" placeholder="Email" id="" value=<%= loggedinuser.email %>>
+
+            </div>
+            <div class="formelem">
+                <input type="submit" value="Update My Details">
+            </div>
+
+        </form>
+
+    </div>
+</body>
+</html>

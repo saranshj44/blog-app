@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloggy</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+  <link rel="stylesheet" href="../stylesheets/style.css">
+</head>
+<body>
+  <div id="home">
+    <% if(messages.info){ %>
+      <h1 class="info"><%= messages.info %> <i class="ri-close-fill"></i></h1>
+    <% } %>
+    <div id="nav">
+      <a href="/">Bloggy</a>
+      <div id="links">
+        <a href="/blog">All Blogs By User</a>
+        <a href="/featured">( Updated ) Featured</a>
+      </div>
+      <% if(loggedin){%>
+        <div id="btns">
+          <a href="/profile">Profile</a>
+          <a href="/logout">Logout</a>
+        </div>
+      <%}else{%>
+      <div id="btns">
+        <a href="/register">Register</a>
+        <a href="/login">Login</a>
+      </div>
+      <%}%>
+    </div>
+    <div id="content">
+      <h1>Hey User, we've Something really <br> good for you , <span id="tdy">today</span> </h1>
+      <a href="#">Explore More <i class="ri-arrow-right-line"></i></a>
+      <div id="menu">
+        <div id="extra">
+          <div class="catg active">
+            <i class="ri-heart-line"></i><h4>Liked Post</h4>
+          </div>
+          <div class="catg">
+            <i class="ri-quill-pen-fill"></i><h4>Recent Post</h4>
+          </div>
+          <div class="catg">
+            <i class="ri-user-heart-line"></i><h4>New User</h4>
+          </div>
+        </div>
+        <div class="main">
+          <% if(details !== undefined){ %>
+            <% details.forEach((result)=>{ %>
+              <div class="blgexmpl">
+                <div class="pic">
+                  <img src=<%= result.author.proimage %> alt="">
+                </div>
+                <div class="content">
+                  <h3><%= result.post %></h3>
+                  <h5><%=result.like.length %> amet consectetur adipisicing elit. Asperiores quod ut modi?</h5>
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium odio recusandae nostrum deleniti velit facilis laborum voluptas.</p>
+                  <div class="icons">
+                    <a href=<%= `/like/${result.id}` %>><i class="ri-user-heart-line"></i></a>
+                  <a href="#"><i class="ri-user-add-line"></i></a>
+                  </div>  
+                </div>
+              </div>
+            <% }) %>
+          <% } else { %>
+            <h3 style="position: absolute; bottom:15vh;left:40%;">No Post Available in the Application</h3>
+          <% }%>
+          
+          
+          <!-- <div class="blgexmpl">
+            <div class="pic"></div>
+            <div class="content">
+              <h3>Lorem ipsum dolor sit amet.</h3>
+              <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores quod ut modi?</h5>
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium odio recusandae nostrum deleniti velit facilis laborum voluptas.</p>
+              <div class="icons">
+                <i class="ri-user-heart-line"></i>
+              <i class="ri-user-add-line"></i>
+              </div>
+              
+            </div>
+          </div>
+          <div class="blgexmpl">
+            <div class="pic"></div>
+            <div class="content">
+              <h3>Lorem ipsum dolor sit amet.</h3>
+              <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores quod ut modi?</h5>
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium odio recusandae nostrum deleniti velit facilis laborum voluptas.</p>
+              <div class="icons">
+                <i class="ri-user-heart-line"></i>
+              <i class="ri-user-add-line"></i>
+              </div>
+              
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

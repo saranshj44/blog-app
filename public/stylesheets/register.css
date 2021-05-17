@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+#center{
+    width: 85%;
+    height: 100%;
+    padding: 50px 0;
+    background-color: #ffffff;
+    margin: 0px auto;
+}
+#center a{
+    text-decoration: none;
+    align-items: center;
+    display: flex;
+    color: black;
+    margin-bottom: 40px;
+}
+#center a i{
+    margin-right: 10px;
+
+}
+.formelem{
+    margin-top: 20px;
+}
+.formelem label ,.formelem input{
+    display: block;
+    margin-top: 5px;
+}
+.formelem input{
+    width: 50%;
+    padding: 12px 20px;
+    outline-color: royalblue;
+}
+.formelem input[type="submit"]{
+    width: initial;
+    background-color: royalblue;
+    color: #fff;
+    border: none;
+}
